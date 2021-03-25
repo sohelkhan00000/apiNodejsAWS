@@ -9,9 +9,9 @@ exports.getFunkgetCityByPinCode = function (req, res) {
 
 
 
-    if (req.params.pinCode) {
-        // res.send("Pin code is " + req.params.pinCode);
-        res.json(jsonConncection);
+    if (req.query.pinCode) {
+        res.send("Pin code is " + req.query.pinCode);
+       // res.json(jsonConncection);
 
     }
     else {
@@ -23,7 +23,7 @@ exports.getFunkgetCityByPinCode = function (req, res) {
 exports.postFunkgetCityByPinCode = function (req, res) {
 
     /* uncomment that to insert data */
-    tblModel.findOne({ pincode: Number(req.body.pincode) }, function (err, data) {
+    tblModel.findOne({ pincode: Number(req.body.pinCode) }, function (err, data) {
         if (err) {
 
             console.log("Error block" + err);
